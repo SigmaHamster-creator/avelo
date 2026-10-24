@@ -124,6 +124,7 @@ export default function ArrangementDetailsPage() {
           <p>{form.outbound.pickupAddress} &rarr; {form.outbound.destinationName}</p>
           <p>Required arrival: {formatHHMMTo12Hour(form.outbound.requiredArrivalTime)}</p>
           {form.outbound.suggestedPickupTime && <p>Pickup: {formatHHMMTo12Hour(form.outbound.suggestedPickupTime)}</p>}
+          <p>Date: {form.outbound.tripDate}</p>
         </section>
 
         <section style={{ marginBottom: "var(--space-lg)" }}>

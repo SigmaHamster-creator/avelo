@@ -56,7 +56,13 @@ export async function POST(request: NextRequest) {
 
   const scenarioId: DemoScenarioId = body.scenarioId && SCENARIOS[body.scenarioId] ? body.scenarioId : DEFAULT_SCENARIO_ID;
 
-  const booking = createBooking(form, freshEstimate, scenarioId, clientRequestId);
+  // Store the server-calculated pickup time with the booking so the
+  // arrangement shows both legs' times.
+  const bookedForm: BookingFormData = {
+    ...form,
+    outbound: { ...form.outbound, suggestedPickupTime: freshEstimate.suggestedPickupTime },
+  };
+  const booking = createBooking(bookedForm, freshEstimate, scenarioId, clientRequestId);
   applyEvent(booking.bookingId, "startSearching");
   startPrimarySearch(booking.bookingId);
 
