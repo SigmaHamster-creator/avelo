@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Run domain tests on save",
+      "trigger": "PostFileSave",
+      "description": "Runs the Vitest suite for Avelo's domain layer (FormValidator, FieldMergeEngine, PricingEngine, PickupTimeCalculator, BookingStateMachine, MatchingSimulator, voice extractor, hospital directory) whenever a domain module file is saved, so a merge/validation/pricing/state-machine regression shows up immediately.",
+      "matcher": "avelo[\\\\/]src[\\\\/]domain[\\\\/].*\\.ts$",
+      "action": {
+        "type": "command",
+        "command": "npm --prefix avelo test -- src/domain/__tests__",
+        "timeout": 120
+      }
+    }
+  ]
+}

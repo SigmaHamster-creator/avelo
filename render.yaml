@@ -1,0 +1,17 @@
+# Render Blueprint for the Avelo demo.
+# A single long-running Node web service, because demo bookings live in
+# server memory (see avelo/README.md, "Persistence and limitations").
+services:
+  - type: web
+    name: avelo
+    runtime: node
+    plan: free
+    rootDir: avelo
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"

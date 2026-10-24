@@ -1,0 +1,7 @@
+# Repository-level ignores. App-specific ignores live in avelo/.gitignore.
+# IMPORTANT: never ignore .kiro/ -- the hackathon requires it at the repo root.
+.DS_Store
+Thumbs.db
+desktop.ini
+.env
+.env.local
