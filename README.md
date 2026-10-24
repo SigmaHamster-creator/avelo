@@ -11,7 +11,9 @@ a loved one with mobility limitations. The caregiver describes the trip once, by
 and Avelo fills in the form, works out when the passenger should be picked up, shows a round-trip estimate, and
 arranges a provider that can handle a wheelchair, companions, and both legs of the trip.
 
-- **Live demo:** _add the hosted URL here after deploying (see "Deploy" below)_
+- **Live demo:** https://avelo-lisn.onrender.com (free hosting: the first visit after a quiet period can take
+  about a minute to wake up)
+- **Source:** https://github.com/SigmaHamster-creator/avelo
 - **Demo video:** _add the public YouTube/Vimeo link here_
 - **Product description:** [PROJECT_DESCRIPTION.md](PROJECT_DESCRIPTION.md)
 - **How Kiro was used:** [KIRO_USAGE.md](KIRO_USAGE.md)
